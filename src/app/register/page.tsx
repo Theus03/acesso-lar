@@ -28,11 +28,11 @@ export default function Register() {
                         <hr className="bg-black w-16" />
                     </div>
                     <div>
-                        <span className="absolute bg-primary left-32 top-5/12 mt-6 text-2xl pl-2 pr-2">Email</span>
+                        <span className="absolute bg-primary left-32 top-5/12 mt-12 text-2xl pl-2 pr-2">Email</span>
                         <input className="border w-2xl p-5 rounded-2xl border-gray-800 text-2xl" type="email" title="Email" onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div>
-                    <span className="absolute bg-primary left-32 top-6/12 mt-16  text-2xl pl-2 pr-2">Senha</span>
+                    <span className="absolute bg-primary left-32 top-6/12 mt-20  text-2xl pl-2 pr-2">Senha</span>
                         <input className="border w-2xl p-5 rounded-2xl border-gray-800 text-2xl" type="password" title="Senha" onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <button className="p-5 w-2xl bg text-white bg-teal-700 rounded-2xl text-2xl text-bold cursor-pointer ease-in-out duration-75 hover:bg-teal-800" type="button" onClick={register}>Registrar Agora</button>
