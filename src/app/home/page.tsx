@@ -1,9 +1,9 @@
 export default function Home() {
     return (
         <div>
-            <header className="flex items-center justify-between">
-                <img src="logo.png" alt="Logo da AcessoLar" />
-                <span>👋 Olá, Matheus!</span>
+            <header className="flex items-center justify-between p-12">
+                <img className="w-50" src="logo.png" alt="Logo da AcessoLar" />
+                <span className="text-2xl font-bold">👋 Olá, Matheus!</span>
             </header>
             <main className="flex">
                 <div>
