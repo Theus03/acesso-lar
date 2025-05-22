@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export function signUp(user: User) {
+export function signUpEmail(user: User) {
     if (user != null) {
         axios({
             method: "POST",
@@ -15,7 +15,7 @@ export function signUp(user: User) {
     }
 }
 
-export function signIn(user: User) {
+export function signInEmail(user: User) {
     if (user != null) {
         axios({
             method: "GET",

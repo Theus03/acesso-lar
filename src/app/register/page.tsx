@@ -1,6 +1,6 @@
 'use client'
 
-import { signUp } from "@/app/api/auth"
+import { signUpEmail } from "@/app/api/auth"
 import { useState } from "react";
 
 export default function Register() {
@@ -12,7 +12,7 @@ export default function Register() {
             email: email,
             password: password
         }
-        signUp(user);
+        signUpEmail(user);
     }
 
     return (

@@ -1,6 +1,7 @@
 'use client'
 
-import { signIn } from "@/app/api/auth"
+import { signInEmail } from "@/app/api/auth"
+import { signIn } from "next-auth/react";
 import { useState } from "react";
 
 export default function Login() {
@@ -12,7 +13,7 @@ export default function Login() {
             email: email,
             password: password
         }
-        signIn(user);
+        signInEmail(user);
     }
 
     return (
@@ -21,7 +22,7 @@ export default function Login() {
                 <img src="logo.png" alt="Logo da AcessoLar" />
                 <div className="mt-12 flex flex-col gap-10 pl-6">
                     <h1 className="font-bold text-4xl">Login</h1>
-                    <button className="border rounded-2xl border-gray-600 p-5 w-2xl text-gray-600 flex gap-4 items-center justify-center text-2xl cursor-pointer ease-in-out duration-75 hover:border-gray-400"> <img src="logo-google.png" alt="Logo da Google" /> Continue com o Google</button>
+                    <button onClick={() => signIn("google", { callbackUrl: "/home" })} className="border rounded-2xl border-gray-600 p-5 w-2xl text-gray-600 flex gap-4 items-center justify-center text-2xl cursor-pointer ease-in-out duration-75 hover:border-gray-400"> <img src="logo-google.png" alt="Logo da Google" /> Continue com o Google</button>
                     <div className="flex items-center justify-center gap-2 w-2xl">
                         <hr className="bg-black w-16" />
                         <span className="text-2xl text-gray-600">Ou cadastre-se com seu email</span>

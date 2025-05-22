@@ -1,9 +1,17 @@
+'use client'
+import { useSession } from 'next-auth/react';
+
 export default function Home() {
+
+    const { data: session, status } = useSession();
+    console.log(status);
+    console.log(session)
+
     return (
         <div>
             <header className="flex items-center justify-between p-12">
                 <img className="w-50" src="logo.png" alt="Logo da AcessoLar" />
-                <span className="text-2xl font-bold">👋 Olá, Matheus!</span>
+                <span className="text-2xl font-bold">👋 Olá, {session?.user?.name}!</span>
             </header>
             <main className="flex gap-32 ml-16">
                 <div className="max-w-[60%]">
@@ -57,6 +65,9 @@ export default function Home() {
                     </div>
                 </div>
             </main>
+            <footer className="flex w-full items-end justify-end pr-16">
+                <a href="/login">Sair</a>
+            </footer>
         </div>
     )
 }
