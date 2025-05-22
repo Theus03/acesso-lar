@@ -1,36 +1,41 @@
 'use client'
 import { useSession } from 'next-auth/react';
+import { useEffect } from 'react';
 
 export default function Home() {
 
-    const { data: session, status } = useSession();
-    console.log(status);
-    console.log(session)
+    const { data: session } = useSession();
+    let nameFromStorage = null;
+
+    nameFromStorage = sessionStorage.getItem("name") || null;
+    const displayName = nameFromStorage || session?.user?.name;
 
     return (
         <div>
             <header className="flex items-center justify-between p-12">
                 <img className="w-50" src="logo.png" alt="Logo da AcessoLar" />
-                <span className="text-2xl font-bold">👋 Olá, {session?.user?.name}!</span>
+                {displayName && (
+                    <span className="text-2xl font-bold">👋 Olá, {displayName}!</span>
+                )}
             </header>
             <main className="flex gap-32 ml-16">
                 <div className="max-w-[60%]">
                     <h4 className="text-2xl text-gray-600">Encontre uma marca que você conhece e confia.</h4>
                     <div id="carrouselMarcas" className="max-w-[100%] overflow-auto mt-8">
                         <div className="flex gap-6 w-full">
-                            <img src="madeiramadeira.png" alt="MadeiraMadeira"/>
-                            <img src="tokstok.png" alt="Tok&Stock" />
-                            <img src="casasbahia.png" alt="Casas Bahia" />
-                            <img src="mobly.png" alt="Mobly" />
-                            <img src="etna.png" alt="Etna" />
-                            <img src="leroymerlin.png" alt="Leroy Merlin" />
-                            <img src="pontofrio.png" alt="Ponto Frio" />
-                            <img src="magalu.png" alt="Magazine Luiza" />
-                            <img src="americanas.png" alt="Americanas" />
-                            <img src="oppa.png" alt="Oppa" />
-                            <img src="westwing.png" alt="Westiwing" />
-                            <img src="carrefour.png" alt="Carrefour" />
-                            <img src="madesa.png" alt="Madesa" />
+                            <img className="cursor-pointer" src="madeiramadeira.png" alt="MadeiraMadeira" onClick={() => window.open("https://www.madeiramadeira.com.br/", "_blank", "noopener,noreferrer")} />
+                            <img className="cursor-pointer" src="tokstok.png" alt="Tok&Stock" onClick={() => window.open("https://www.tokstok.com.br/", "_blank", "noopener,noreferrer")} />
+                            <img className="cursor-pointer" src="casasbahia.png" alt="Casas Bahia" onClick={() => window.open("https://www.casasbahia.com.br/", "_blank", "noopener,noreferrer")} />
+                            <img className="cursor-pointer" src="mobly.png" alt="Mobly" onClick={() => window.open("https://www.mobly.com.br/", "_blank", "noopener,noreferrer")} />
+                            <img className="cursor-pointer" src="etna.png" alt="Etna" onClick={() => window.open("https://www.etna.com.br/", "_blank", "noopener,noreferrer")} />
+                            <img className="cursor-pointer" src="leroymerlin.png" alt="Leroy Merlin" onClick={() => window.open("https://www.leroymerlin.com.br/", "_blank", "noopener,noreferrer")} />
+                            <img className="cursor-pointer" src="pontofrio.png" alt="Ponto Frio" onClick={() => window.open("https://www.pontofrio.com.br/", "_blank", "noopener,noreferrer")} />
+                            <img className="cursor-pointer" src="magalu.png" alt="Magazine Luiza" onClick={() => window.open("https://www.magazineluiza.com.br/", "_blank", "noopener,noreferrer")} />
+                            <img className="cursor-pointer" src="americanas.png" alt="Americanas" onClick={() => window.open("https://www.americanas.com.br/", "_blank", "noopener,noreferrer")} />
+                            <img className="cursor-pointer" src="oppa.png" alt="Oppa" onClick={() => window.open("https://www.oppa.com.br/", "_blank", "noopener,noreferrer")} />
+                            <img className="cursor-pointer" src="westwing.png" alt="Westwing" onClick={() => window.open("https://www.westwing.com.br/", "_blank", "noopener,noreferrer")} />
+                            <img className="cursor-pointer" src="carrefour.png" alt="Carrefour" onClick={() => window.open("https://www.carrefour.com.br/", "_blank", "noopener,noreferrer")} />
+                            <img className="cursor-pointer" src="madesa.png" alt="Madesa" onClick={() => window.open("https://www.madesa.com/", "_blank", "noopener,noreferrer")} />
                         </div>
                     </div>
                     <h4 className="text-2xl text-gray-600 mt-8">Ideias para o seu lar.</h4>
@@ -66,7 +71,7 @@ export default function Home() {
                 </div>
             </main>
             <footer className="flex w-full items-end justify-end pr-16">
-                <a href="/login">Sair</a>
+                <a href="/login" className='underline'>Sair</a>
             </footer>
         </div>
     )

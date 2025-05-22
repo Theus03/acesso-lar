@@ -15,19 +15,20 @@ export function signUpEmail(user: User) {
     }
 }
 
-export function signInEmail(user: User) {
+export function signInEmail(user: User): Promise<User | undefined> {
     if (user != null) {
-        axios({
+        return axios({
             method: "GET",
             url: "https://680144c481c7e9fbcc421682.mockapi.io/api/v1/users",
         }).then(response => {
-            response.data.map((item: User) => {
-                if (item.email === user.email && item.password === user.password) {
-                    return item;
-                }
-            });
+            const foundUser = response.data.find((item: User) => 
+                item.email === user.email && item.password === user.password
+            );
+            return foundUser;
         }).catch(error => {
             throw new Error(`Error: ${error}`);
-        });  
+        });
+    } else {
+        return Promise.resolve(undefined);
     }
 }

@@ -2,18 +2,32 @@
 
 import { signInEmail } from "@/app/api/auth"
 import { signIn } from "next-auth/react";
-import { useState } from "react";
+import { redirect } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export default function Login() {
+
+    useEffect(() => {
+        sessionStorage.clear();
+    }, []);
+
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     
-    function login() {
+    async function login() {
         const user: User = {
             email: email,
             password: password
         }
-        signInEmail(user);
+        const userAuth = await signInEmail(user);
+
+        if (userAuth != undefined && userAuth.name != null) {
+            sessionStorage.setItem('name', userAuth.name);
+            redirect('/home');
+        } else {
+            alert("Email ou senha inválidos");
+        }
+
     }
 
     return (
