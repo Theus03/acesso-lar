@@ -1,15 +1,22 @@
 'use client'
+import IdeiasSlider from '@/components/IdeiasSlider';
 import { useSession } from 'next-auth/react';
-import { useEffect } from 'react';
 
 export default function Home() {
 
     const { data: session } = useSession();
     let nameFromStorage = null;
+    let displayName = null;
 
-    nameFromStorage = sessionStorage.getItem("name") || null;
-    const displayName = nameFromStorage || session?.user?.name;
-
+    if (typeof window !== 'undefined') {
+      nameFromStorage = sessionStorage.getItem("name");
+      if (sessionStorage.getItem("name") != null) {
+         displayName = nameFromStorage;
+      } else {
+         displayName = session?.user?.name;
+      }
+    } 
+    
     return (
         <div>
             <header className="flex items-center justify-between p-12">
@@ -38,11 +45,7 @@ export default function Home() {
                             <img className="cursor-pointer" src="madesa.png" alt="Madesa" onClick={() => window.open("https://www.madesa.com/", "_blank", "noopener,noreferrer")} />
                         </div>
                     </div>
-                    <h4 className="text-2xl text-gray-600 mt-8">Ideias para o seu lar.</h4>
-                    <div className="flex gap-6 mt-6">
-                        <img src="ideia1.png" alt="Ideia 1" />
-                        <img src="ideia2.png" alt="Ideia 2" />
-                    </div>
+                   <IdeiasSlider></IdeiasSlider>
 
                 </div>
                 <div className="max-w-[20%]">

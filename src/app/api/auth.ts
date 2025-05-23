@@ -7,7 +7,8 @@ export function signUpEmail(user: User) {
             url: "https://680144c481c7e9fbcc421682.mockapi.io/api/v1/users",
             data: {
                 email: user.email,
-                password: user.password
+                password: user.password,
+                name: user.name
             }
         })    
     } else {
