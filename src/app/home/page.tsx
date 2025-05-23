@@ -1,6 +1,7 @@
 'use client'
 import IdeiasSlider from '@/components/IdeiasSlider';
 import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 
 export default function Home() {
 
@@ -30,19 +31,19 @@ export default function Home() {
                     <h4 className="text-2xl text-gray-600">Encontre uma marca que você conhece e confia.</h4>
                     <div id="carrouselMarcas" className="max-w-[100%] overflow-auto mt-8">
                         <div className="flex gap-6 w-full">
-                            <img className="cursor-pointer" src="madeiramadeira.png" alt="MadeiraMadeira" onClick={() => window.open("https://www.madeiramadeira.com.br/", "_blank", "noopener,noreferrer")} />
-                            <img className="cursor-pointer" src="tokstok.png" alt="Tok&Stock" onClick={() => window.open("https://www.tokstok.com.br/", "_blank", "noopener,noreferrer")} />
-                            <img className="cursor-pointer" src="casasbahia.png" alt="Casas Bahia" onClick={() => window.open("https://www.casasbahia.com.br/", "_blank", "noopener,noreferrer")} />
-                            <img className="cursor-pointer" src="mobly.png" alt="Mobly" onClick={() => window.open("https://www.mobly.com.br/", "_blank", "noopener,noreferrer")} />
-                            <img className="cursor-pointer" src="etna.png" alt="Etna" onClick={() => window.open("https://www.etna.com.br/", "_blank", "noopener,noreferrer")} />
-                            <img className="cursor-pointer" src="leroymerlin.png" alt="Leroy Merlin" onClick={() => window.open("https://www.leroymerlin.com.br/", "_blank", "noopener,noreferrer")} />
-                            <img className="cursor-pointer" src="pontofrio.png" alt="Ponto Frio" onClick={() => window.open("https://www.pontofrio.com.br/", "_blank", "noopener,noreferrer")} />
-                            <img className="cursor-pointer" src="magalu.png" alt="Magazine Luiza" onClick={() => window.open("https://www.magazineluiza.com.br/", "_blank", "noopener,noreferrer")} />
-                            <img className="cursor-pointer" src="americanas.png" alt="Americanas" onClick={() => window.open("https://www.americanas.com.br/", "_blank", "noopener,noreferrer")} />
-                            <img className="cursor-pointer" src="oppa.png" alt="Oppa" onClick={() => window.open("https://www.oppa.com.br/", "_blank", "noopener,noreferrer")} />
-                            <img className="cursor-pointer" src="westwing.png" alt="Westwing" onClick={() => window.open("https://www.westwing.com.br/", "_blank", "noopener,noreferrer")} />
-                            <img className="cursor-pointer" src="carrefour.png" alt="Carrefour" onClick={() => window.open("https://www.carrefour.com.br/", "_blank", "noopener,noreferrer")} />
-                            <img className="cursor-pointer" src="madesa.png" alt="Madesa" onClick={() => window.open("https://www.madesa.com/", "_blank", "noopener,noreferrer")} />
+                            <Image className="cursor-pointer" src="madeiramadeira.png" alt="MadeiraMadeira" onClick={() => window.open("https://www.madeiramadeira.com.br/", "_blank", "noopener,noreferrer")} />
+                            <Image className="cursor-pointer" src="tokstok.png" alt="Tok&Stock" onClick={() => window.open("https://www.tokstok.com.br/", "_blank", "noopener,noreferrer")} />
+                            <Image className="cursor-pointer" src="casasbahia.png" alt="Casas Bahia" onClick={() => window.open("https://www.casasbahia.com.br/", "_blank", "noopener,noreferrer")} />
+                            <Image className="cursor-pointer" src="mobly.png" alt="Mobly" onClick={() => window.open("https://www.mobly.com.br/", "_blank", "noopener,noreferrer")} />
+                            <Image className="cursor-pointer" src="etna.png" alt="Etna" onClick={() => window.open("https://www.etna.com.br/", "_blank", "noopener,noreferrer")} />
+                            <Image className="cursor-pointer" src="leroymerlin.png" alt="Leroy Merlin" onClick={() => window.open("https://www.leroymerlin.com.br/", "_blank", "noopener,noreferrer")} />
+                            <Image className="cursor-pointer" src="pontofrio.png" alt="Ponto Frio" onClick={() => window.open("https://www.pontofrio.com.br/", "_blank", "noopener,noreferrer")} />
+                            <Image className="cursor-pointer" src="magalu.png" alt="Magazine Luiza" onClick={() => window.open("https://www.magazineluiza.com.br/", "_blank", "noopener,noreferrer")} />
+                            <Image className="cursor-pointer" src="americanas.png" alt="Americanas" onClick={() => window.open("https://www.americanas.com.br/", "_blank", "noopener,noreferrer")} />
+                            <Image className="cursor-pointer" src="oppa.png" alt="Oppa" onClick={() => window.open("https://www.oppa.com.br/", "_blank", "noopener,noreferrer")} />
+                            <Image className="cursor-pointer" src="westwing.png" alt="Westwing" onClick={() => window.open("https://www.westwing.com.br/", "_blank", "noopener,noreferrer")} />
+                            <Image className="cursor-pointer" src="carrefour.png" alt="Carrefour" onClick={() => window.open("https://www.carrefour.com.br/", "_blank", "noopener,noreferrer")} />
+                            <Image className="cursor-pointer" src="madesa.png" alt="Madesa" onClick={() => window.open("https://www.madesa.com/", "_blank", "noopener,noreferrer")} />
                         </div>
                     </div>
                    <IdeiasSlider></IdeiasSlider>
