@@ -34,7 +34,7 @@ export default function Login() {
     return (
         <div className="bg-primary h-100">
             <main className="p-16">
-                <Image src="logo.png" alt="Logo da AcessoLar" />
+                <img src="logo.png" alt="Logo da AcessoLar" />
                 <div className="mt-12 flex flex-col gap-10 pl-6">
                     <h1 className="font-bold text-4xl">Login</h1>
                     <button onClick={() => signIn("google", { callbackUrl: "/home" })} className="border rounded-2xl border-gray-600 p-5 w-2xl text-gray-600 flex gap-4 items-center justify-center text-2xl cursor-pointer ease-in-out duration-75 hover:border-gray-400"> <img src="logo-google.png" alt="Logo da Google" /> Continue com o Google</button>
@@ -59,7 +59,7 @@ export default function Login() {
                     </div>
                 </div>
             </main>
-            <Image className="absolute right-0 top-0 bottom-0 w-3xl" src="background-login.png" alt="Imagem de uma sala"/>
+            <img className="absolute right-0 top-0 bottom-0 w-3xl" src="background-login.png" alt="Imagem de uma sala"/>
         </div>
     )
 }
