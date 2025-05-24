@@ -22,7 +22,7 @@ export default function Home() {
     return (
         <div>
             <header className="flex items-center justify-between p-12">
-                <img className="w-50" src="logo.png" alt="Logo da AcessoLar" />
+                <Image src="/logo.png" width={200} height={200} className='w-50' alt="Logo da AcessoLar" />
                 {displayName && (
                     <span className="text-2xl font-bold">👋 Olá, {displayName}!</span>
                 )}

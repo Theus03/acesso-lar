@@ -37,7 +37,7 @@ export default function Login() {
                 <Image src="/logo.png" width={200} height={200} alt="Logo da AcessoLar" />
                 <div className="mt-12 flex flex-col gap-10 pl-6">
                     <h1 className="font-bold text-4xl">Login</h1>
-                    <button onClick={() => signIn("google", { callbackUrl: "/home" })} className="border rounded-2xl border-gray-600 p-5 w-2xl text-gray-600 flex gap-4 items-center justify-center text-2xl cursor-pointer ease-in-out duration-75 hover:border-gray-400"> <img src="logo-google.png" alt="Logo da Google" /> Continue com o Google</button>
+                    <button onClick={() => signIn("google", { callbackUrl: "/home" })} className="border rounded-2xl border-gray-600 p-5 w-2xl text-gray-600 flex gap-4 items-center justify-center text-2xl cursor-pointer ease-in-out duration-75 hover:border-gray-400"> <Image width={32} height={100} src="/logo-google.png" alt="Logo da Google" /> Continue com o Google</button>
                     <div className="flex items-center justify-center gap-2 w-2xl">
                         <hr className="bg-black w-16" />
                         <span className="text-2xl text-gray-600">Ou cadastre-se com seu email</span>
@@ -59,7 +59,7 @@ export default function Login() {
                     </div>
                 </div>
             </main>
-            <img className="absolute right-0 top-0 bottom-0 w-3xl" src="background-login.png" alt="Imagem de uma sala"/>
+            <Image width={600} height={100} className="absolute right-0 top-0 bottom-0 w-3xl" src="/background-login.png" alt="Imagem de uma sala"/>
         </div>
     )
 }
