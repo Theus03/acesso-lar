@@ -26,6 +26,7 @@ export default function Home() {
                 {displayName && (
                     <span className="text-2xl font-bold">👋 Olá, {displayName}!</span>
                 )}
+                <h1>Olha o tes aqui funcionando</h1>
             </header>
             <main className="flex gap-32 ml-16">
                 <div className="max-w-[60%]">
