@@ -1,4 +1,5 @@
 import axios from "axios"
+import { User } from "../types/User";
 
 export function signUpEmail(user: User) {
     if (user != null) {
