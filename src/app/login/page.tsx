@@ -5,6 +5,7 @@ import { signIn } from "next-auth/react";
 import { redirect } from "next/navigation";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { User } from "../types/User";
 
 export default function Login() {
 

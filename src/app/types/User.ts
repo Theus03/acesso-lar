@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-type User = {
+export type User = {
     email: string;
     password: string;
     name?: string;

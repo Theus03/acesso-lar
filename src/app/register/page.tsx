@@ -4,6 +4,7 @@ import { signUpEmail } from "@/app/api/auth"
 import { redirect } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
+import { User } from "../types/User";
 
 export default function Register() {
     const [nome, setNome] = useState<string>("");
