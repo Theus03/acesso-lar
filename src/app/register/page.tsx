@@ -19,7 +19,7 @@ export default function Register() {
             name: nome
         }
         signUpEmail(user);
-        Alert("Usuario cadastrado com sucesso!", "success");
+        Alert("Usuário cadastrado com sucesso!", "success");
         sessionStorage.setItem('name', nome);
         setTimeout (() => {
             redirect("/home");
