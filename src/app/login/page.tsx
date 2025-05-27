@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { User } from "../types/User";
+import { Alert } from "@/components/Alert";
 
 export default function Login() {
 
@@ -27,7 +28,7 @@ export default function Login() {
             sessionStorage.setItem('name', userAuth.name);
             redirect('/home');
         } else {
-            alert("Email ou senha inválidos");
+           Alert("Email ou senha inválidos. Tente novamente.", "error");
         }
 
     }

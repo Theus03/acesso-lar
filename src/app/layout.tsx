@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import { AuthProvider } from "@/components/AuthProvider";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const geistSans = Inter({
   variable: "--font-inter",
@@ -23,6 +24,7 @@ export default function RootLayout({
         className={`${geistSans.variable} antialiased bg-primary`}>
           <AuthProvider>
             {children}
+            <Toaster richColors position="top-center" />
           </AuthProvider>
       </body>
     </html>

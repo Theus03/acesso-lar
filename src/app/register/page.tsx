@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
 import { User } from "../types/User";
+import { Alert } from "@/components/Alert";
 
 export default function Register() {
     const [nome, setNome] = useState<string>("");
@@ -18,8 +19,11 @@ export default function Register() {
             name: nome
         }
         signUpEmail(user);
+        Alert("Usuario cadastrado com sucesso!", "success");
         sessionStorage.setItem('name', nome);
-        redirect("/home");
+        setTimeout (() => {
+            redirect("/home");
+        }, 3000)
     }
 
     return (
